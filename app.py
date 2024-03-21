@@ -7,14 +7,13 @@ import bykeywords as bk
 # import search as src
 
 app = Flask(__name__)
-app.config['assets_FOLDER'] = 'assets'
 app.config['STATIC_FOLDER'] = 'static'
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
 
 @app.route('/keywords', methods=['GET'])
-def keywords():
+def viewsearch():
     return render_template('rekomendasi2.html')
 
 @app.route('/keywords', methods=['POST'])

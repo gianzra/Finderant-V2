@@ -1,17 +1,17 @@
 # Mengimpor library
-import pandas as pd
-import re
-import nltk
-nltk.download('stopwords')
+import pandas as pd #data manipulation
+import re #reguler expression
+import nltk #nlp
+nltk.download('stopwords') # kata-kata umum yang seringkali tidak memberikan nilai tambah dalam pemrosesan teks.
 from nltk.corpus import stopwords
-nltk.download('punkt')
-from nltk.tokenize import word_tokenize
+nltk.download('punkt') #tokenization teks
+from nltk.tokenize import word_tokenize 
 # import Sastrawi package  
-from Sastrawi.Stemmer.StemmerFactory import StemmerFactory  
+from Sastrawi.Stemmer.StemmerFactory import StemmerFactory  # alat-alat pemrosesan bahasa alami khusus untuk bahasa Indonesia, seperti stemming.
 # Libraries for Recommendation System
-from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer # mengubah koleksi dokumen teks menjadi matriks TF-IDF
 # Import linear_kernel
-from sklearn.metrics.pairwise import linear_kernel
+from sklearn.metrics.pairwise import linear_kernel # menghitung kemiripan antara dua vektor
 
 def get_recommendations(judul, jumlah):
     # Tokenize
@@ -157,16 +157,5 @@ def get_recommendations(judul, jumlah):
         count += 1
         
     return recommendation
-
-    if __name__ == "__main__":
-    # Meminta input dari pengguna
-        judul = input("Masukkan keyword buku yang ingin anda temukan: ")
-        jumlah = input("Masukkan jumlah rekomendasi buku: ")
-
-        # Memanggil fungsi get_recommendations
-        rekomendasi = get_recommendations(judul, jumlah)
-
-        # Menampilkan hasil rekomendasi
-        print(rekomendasi)
 
 
